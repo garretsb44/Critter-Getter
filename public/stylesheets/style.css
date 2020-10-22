@@ -16,3 +16,18 @@ form.signup, form.login {
   float: right;
 }
 
+.slogan-header {
+  text-align: center;
+  font-family: century-gothic;
+}
+
+.search-card {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.card-header {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
