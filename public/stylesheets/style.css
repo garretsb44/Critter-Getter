@@ -1,4 +1,17 @@
-form.signup,
-form.login {
+form.signup, form.login {
   margin-top: 50px;
+}
+
+#header {
+  text-align: center;
+  background-color: rgb(66, 131, 252);
+  width: 100%;
+}
+
+.login {
+  text-align: center;
+}
+
+.logout-button {
+  float: right;
 }
