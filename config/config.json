@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+
     "password": "password",
+
+    "password": null,
+main
     "database": "critter_getters",
     "host": "127.0.0.1",
     "dialect": "mysql"
