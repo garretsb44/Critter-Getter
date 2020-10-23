@@ -7,7 +7,6 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
   //using redirect until index page is completed
   app.get("/", (req, res) => {
-    // res.redirect("/search");
     res.render("index");
   });
 
