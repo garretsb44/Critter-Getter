@@ -15,7 +15,12 @@ module.exports = function(app) {
   });
 
   app.get("/results", (req, res) => {
-    res.render("results");
+    const { animalType, zip } = req.query;
+    if (!animalType || !zip) {
+      res.redirect("/search");
+    } else {
+      res.render("results");
+    }
   });
 
   // Here we've add our isAuthenticated middleware to this route.
