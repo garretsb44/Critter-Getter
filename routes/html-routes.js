@@ -4,7 +4,7 @@ const path = require("path");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-module.exports = function(app) {
+module.exports = function (app) {
   //using redirect until index page is completed
   app.get("/", (req, res) => {
     res.render("index");
@@ -15,7 +15,12 @@ module.exports = function(app) {
   });
 
   app.get("/results", (req, res) => {
-    res.render("results");
+    const { animalType, zip } = req.query;
+    if (!animalType || !zip) {
+      res.redirect("/search");
+    } else {
+      res.render("results");
+    }
   });
 
   // Here we've add our isAuthenticated middleware to this route.
