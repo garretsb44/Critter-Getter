@@ -17,7 +17,7 @@ module.exports = function(app) {
         .then(function(response) {
           const token = response.data.access_token;
           return axios({
-            meth: "get",
+            method: "get",
             url: `https://api.petfinder.com/v2/animals?type=${animalType}&location=${zip}`,
             headers: { Authorization: `Bearer ${token}` }
           });

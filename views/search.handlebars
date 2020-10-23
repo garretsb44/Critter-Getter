@@ -25,31 +25,29 @@
       SEARCH:
       <br>
 
-      <form action="/results" method="GET"> 
+      <form action="/results" method="get">
         <div class="form-group">
           <label for="exampleZip">Enter your zip code:</label>
-          <input type="zip" class="form-control" id="exampleZip" 
-            placeholder="Enter zip code">
+          <input name="zip" class="form-control" id="zip" placeholder="Enter zip code">
         </div>
 
         <br>
 
         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Please select the type of animal:</label>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="animalType">
           <option selected>Choose...</option>
-          <option id="cats" value="1">Dogs</option>
-          <option value="2">Cats</option>
-          <option value="3">Birds</option>
-          <option value="3">Rabbits</option>
-          <option value="3">Horses</option>
+          <option value="Dog">Dogs</option>
+          <option value="Cat">Cats</option>
+          <option value="Bird">Birds</option>
+          <option value="Rabbit">Rabbits</option>
+          <option value="Horse">Horses</option>
         </select>
 
         <div class="custom-control custom-checkbox my-1 mr-sm-2">
           <input type="checkbox" class="custom-control-input" id="customControlInline">
-          <!-- <label class="custom-control-label" for="customControlInline">Remember my preference</label> -->
         </div>
 
-        <button type="submit" class="btn btn-primary my-1">Submit</button>
+        <button type="submit" class="btn btn-primary my-1" id="search-button" >Search</button>
     </div>
 
   </div>
@@ -57,3 +55,4 @@
 </div>
 </form>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
