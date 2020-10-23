@@ -1,57 +1,59 @@
 <div>
-    <div id="header">
-        <img src="critter-getter-header2.png" />
-    </div>
-    <nav class="navbar navbar-light" style="background-color: #e7f1f8;">
-
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">HOME</a>
-    </div>
-
-    <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a href="#" class="navbar-brand">LOGIN/SIGNUP</a>
-     </li>
-    </ul>
+  <div id="header">
+    <img src="critter-getter-header2.png" />
   </div>
-</nav>
-    <br>
-    <h1 class="slogan-header"><i class="fas fa-paw"></i> Find Your Perfect Pet.</h1>
-    <br>
-    <div class="search-card card">
-        <div class="card-header">
+  <nav class="navbar navbar-light" style="background-color: #e7f1f8;">
 
-            SEARCH:
-            <br>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">HOME</a>
+      </div>
 
-<form>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#" class="navbar-brand">LOGIN/SIGNUP</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br>
+  <h1 class="slogan-header"><i class="fas fa-paw"></i> Find Your Perfect Pet.</h1>
+  <br>
+  <div class="search-card card">
+    <div class="card-header">
+
+      SEARCH:
+      <br>
+
+      <form action="/results" method="GET"> 
         <div class="form-group">
-          <label for="exampleInputEmail1">Enter your zip code:</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter zip code">
+          <label for="exampleZip">Enter your zip code:</label>
+          <input type="zip" class="form-control" id="exampleZip" 
+            placeholder="Enter zip code">
         </div>
-    </form>
+
         <br>
-        
-    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Please select the type of animal:</label>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-      <option selected>Choose...</option>
-      <option id ="cats" value="1">Dogs</option>
-      <option value="2">Cats</option>
-      <option value="3">Birds</option>
-      <option value="3">Rabbits</option>
-      <option value="3">Horses</option>
-    </select>
-  
-    <div class="custom-control custom-checkbox my-1 mr-sm-2">
-      <input type="checkbox" class="custom-control-input" id="customControlInline">
-      <!-- <label class="custom-control-label" for="customControlInline">Remember my preference</label> -->
-    </div>
-  
-    <a href="/results"><button type="button">Search</button></a>
-  </div>
-            
-            </div>
+
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Please select the type of animal:</label>
+        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+          <option selected>Choose...</option>
+          <option id="cats" value="1">Dogs</option>
+          <option value="2">Cats</option>
+          <option value="3">Birds</option>
+          <option value="3">Rabbits</option>
+          <option value="3">Horses</option>
+        </select>
+
+        <div class="custom-control custom-checkbox my-1 mr-sm-2">
+          <input type="checkbox" class="custom-control-input" id="customControlInline">
+          <!-- <label class="custom-control-label" for="customControlInline">Remember my preference</label> -->
         </div>
+
+        <button type="submit" class="btn btn-primary my-1">Submit</button>
     </div>
+
+  </div>
+</div>
+</div>
+</form>
 </div>
