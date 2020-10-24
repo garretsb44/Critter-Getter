@@ -26,6 +26,10 @@ form.signup, form.login {
   margin: 0 auto;
 }
 
+.results-card {
+  width: 30%;
+  margin: 0 auto;
+}
 .card-header {
   margin: 0 auto;
   width: 100%;
