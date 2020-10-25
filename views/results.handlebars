@@ -14,26 +14,48 @@
 </nav>
 <br>
 <h1 style="text-align:center" class="results-header">Results:</h1>
-<div class="results-card">
-  <div class="card">
-    <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg"
-      aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
-      <title>Placeholder</title>
-      <rect width="100%" height="100%" fill="#868e96" /><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image
-      </text>
-    </svg>
+<div class="container">
+  <div class="row" id="card-list">
+    <div  class="col col-sm-12 col-lg-4">
 
-    <div class="card-body">
-      <h5 style="text-align:center" class="card-title">San Diego Adoption Center</h5>
-      
-        <li class="list-group-item">Animal Type: Dog</li>
-        <li class="list-group-item">Name: Fido</li>
-        <li class="list-group-item">Gender: Male</li>
-        <li class="list-group-item">Age: 14</li>
-      </ul>
     </div>
   </div>
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/login.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/login.js"></script>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.sear
+    $.ajax({
+      method: "GET",
+      url: `/api/animals?animalType=${animalType}&zip=${zip}`,
+    }).then((data) => {
+      const cardList = $("#card-list")
+      cardList.empty();
+      for (let i = 0; i < data.animals.length; i++) {
+        let cardDisplay = $("<div  class='col col-sm-12 col-lg-4'>");
+        cardList.append(cardDisplay);
+        let email = $("<p>").text("E-mail: " + data.animals[i].contact.email);
+        let phone = $("<p>").text("Phone: " + data.animals[i].contact.phone);
+        let age = $("<p>").text("Age: " + data.animals[i].age)
+        let name = $("<p>").text("Name: " + data.animals[i].name);
+        let photoURL = "";
+        if (data.animals[i].photos[0]) {
+          photoURL = data.animals[i].photos[0].medium;
+        } else if (!data.animals[i].photos[0]) {
+          photoURL = "https://via.placeholder.com/150";
+        }
+        let pic = $("<img>").attr("src", photoURL);
+        let gender = $("<p>").text("Gender: " + data.animals[i].gender);
+        var card = $("<div>").addClass("card");
+        card.append(pic, type, name, gender, age, phone, email);
+        cardDisplay.append(card);
+      }
+    });
+
+
+
+
+  </script>
