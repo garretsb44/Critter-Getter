@@ -27,7 +27,7 @@
   <script src="/js/login.js"></script>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.sear
+    const urlParams = new URLSearchParams(window.location.search)
     $.ajax({
       method: "GET",
       url: `/api/animals?animalType=${animalType}&zip=${zip}`,
