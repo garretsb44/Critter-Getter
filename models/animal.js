@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  const Saved_animals = sequelize.define("Animal", {
+  const Animal = sequelize.define("Animal", {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -18,5 +18,5 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   });
-  return Saved_animals;
+  return Animal;
 };

@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true
     },
-    saved_animals: {
+    Animal: {
       type: DataTypes.STRING,
       allowNull: true
     },

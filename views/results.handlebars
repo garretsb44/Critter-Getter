@@ -27,11 +27,14 @@
   <script src="/js/login.js"></script>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.sear
+    const urlParams = new URLSearchParams(window.location.search);
+    const zip = urlParams.get("zip");
+    const animalType = urlParams.get("animalType");
     $.ajax({
       method: "GET",
       url: `/api/animals?animalType=${animalType}&zip=${zip}`,
     }).then((data) => {
+      console.log("hello")
       const cardList = $("#card-list")
       cardList.empty();
       for (let i = 0; i < data.animals.length; i++) {
@@ -50,7 +53,16 @@
         let pic = $("<img>").attr("src", photoURL);
         let gender = $("<p>").text("Gender: " + data.animals[i].gender);
         var card = $("<div>").addClass("card");
-        card.append(pic, type, name, gender, age, phone, email);
+        {{!-- let submit = $("<form>").attr("action", "/api/saved_animals").attr("method", "post")
+        let submitInput =$("<input>").attr({
+          type: "hidden",
+          name: "animalData",
+          value: {id: data.animals[i].id, name: data.animals[i].name, distance: data.animals[i].distance, img_url: photoURL}
+          })
+        console.log(submitInput)
+        let button = $("<button>").attr("type", "submit").text("Save this Animal to favorites") --}}
+        submit.append(submitInput, button);
+        card.append(pic, name, gender, age, phone, email, submit);
         cardDisplay.append(card);
       }
     });

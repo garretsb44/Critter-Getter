@@ -26,6 +26,7 @@ module.exports = function(app) {
         res.redirect(307, "/api/login");
       })
       .catch(err => {
+        console.log(err);
         res.status(401).json(err);
       });
   });
@@ -49,5 +50,15 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+  app.post("/api/saved_animals", (req, res) => {
+    console.log(req.body.animalData.id);
+    db.Animal.create(req.body.animalData)
+      .then(() => {
+        console.log("animal saved");
+      })
+      .catch(err => {
+        console.log(err);
+      });
   });
 };
