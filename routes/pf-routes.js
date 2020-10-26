@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const { PETFINDER_ID, PETFINDER_SECRET } = process.env;
+// const { PETFINDER_ID, PETFINDER_SECRET } = process.env;
 
 module.exports = function(app) {
   app.get("/api/animals", async (req, res) => {
@@ -13,7 +13,7 @@ module.exports = function(app) {
       axios({
         method: "post",
         url: "https://api.petfinder.com/v2/oauth2/token",
-        data: `grant_type=client_credentials&client_id=${PETFINDER_ID}&client_secret=${PETFINDER_SECRET}`
+        data: `grant_type=client_credentials&client_id=${process.env.PETFINDER_ID}&client_secret=${process.env.PETFINDER_SECRET}`
       })
         .then(function(response) {
           const token = response.data.access_token;
