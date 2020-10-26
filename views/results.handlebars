@@ -40,8 +40,9 @@
         let pic = $("<img>").attr("src", photoURL);
         let gender = $("<p>").text("Gender: " + data.animals[i].gender);
         var card = $("<div>").addClass("card");
-        card.append(pic, name, gender, age, phone, email, submit);
+        card.append(pic, name, gender, age, phone, email);
         cardDisplay.append(card);
+      }
     });
 
 
