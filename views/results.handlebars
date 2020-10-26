@@ -40,21 +40,9 @@
         let pic = $("<img>").attr("src", photoURL);
         let gender = $("<p>").text("Gender: " + data.animals[i].gender);
         var card = $("<div>").addClass("card");
-        // let submit = $("<form>").attr("action", "/api/saved_animals").attr("method", "post")
-        //let submitInput =$("<input>").attr({
-        // type: "hidden",
-        // name: "animalData",
-        // value: {id: data.animals[i].id, name: data.animals[i].name, distance: data.animals[i].distance, img_url: photoURL}
-         // })
-        //console.log(submitInput)
-        //let button = $("<button>").attr("type", "submit").text("Save this Animal to favorites") --}}
-        // submit.append(submitInput, button);
         card.append(pic, name, gender, age, phone, email, submit);
         cardDisplay.append(card);
-      
-    };
-
-
+    });
 
 
   </script>
