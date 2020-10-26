@@ -36,9 +36,11 @@ form.signup, form.login {
   text-align: center;
 }
 
-/* .card {
-  width: 50%;
-} */
+.login-box, .signup-box {
+  margin: 0 auto;
+  text-align: center;
+
+}
 
 /* mobile responsiveness code  */
 @media (max-width: 480px){

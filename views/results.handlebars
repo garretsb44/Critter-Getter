@@ -1,17 +1,4 @@
-<div id="header">
-  <img src="critter-getter-header2.png" alt="critter getter header logo" />
-</div>
-<nav class="navbar navbar-light" style="background-color: #e7f1f8;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">HOME</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a href="/" class="navbar-brand">LOGOUT</a></li>
-    </ul>
-  </div>
-</nav>
+
 <br>
 <h1 style="text-align:center" class="results-header">Results:</h1>
 <div class="container">
@@ -53,19 +40,19 @@
         let pic = $("<img>").attr("src", photoURL);
         let gender = $("<p>").text("Gender: " + data.animals[i].gender);
         var card = $("<div>").addClass("card");
-        {{!-- let submit = $("<form>").attr("action", "/api/saved_animals").attr("method", "post")
-        let submitInput =$("<input>").attr({
-          type: "hidden",
-          name: "animalData",
-          value: {id: data.animals[i].id, name: data.animals[i].name, distance: data.animals[i].distance, img_url: photoURL}
-          })
-        console.log(submitInput)
-        let button = $("<button>").attr("type", "submit").text("Save this Animal to favorites") --}}
-        submit.append(submitInput, button);
+        // let submit = $("<form>").attr("action", "/api/saved_animals").attr("method", "post")
+        //let submitInput =$("<input>").attr({
+        // type: "hidden",
+        // name: "animalData",
+        // value: {id: data.animals[i].id, name: data.animals[i].name, distance: data.animals[i].distance, img_url: photoURL}
+         // })
+        //console.log(submitInput)
+        //let button = $("<button>").attr("type", "submit").text("Save this Animal to favorites") --}}
+        // submit.append(submitInput, button);
         card.append(pic, name, gender, age, phone, email, submit);
         cardDisplay.append(card);
-      }
-    });
+      
+    };
 
 
 
